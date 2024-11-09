@@ -20,3 +20,5 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: build
         run: script/build.sh
+      - name: list dist
+        run: ls -l dist
