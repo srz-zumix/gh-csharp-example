@@ -1,10 +1,10 @@
-namespace temp.Test.TestCase;
+namespace gh_csharp_example.Test.TestCase;
 
 public class SampleTest
 {
     [Test]
     public void Pass()
     {
-        Assert.IsTrue(true);
+        Assert.That(true);
     }
 }
