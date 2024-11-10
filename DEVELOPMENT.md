@@ -42,6 +42,6 @@ Please label the pull request. [Release drafter](./.github/release-drafter.yml) 
 
 ## Release
 
-Please manually trigger the [Release drafter workflow](./actions/workflows/release-drafter.yml). A release will be created shortly.
+Please manually trigger the [Release drafter workflow](../../actions/workflows/release-drafter.yml). A release will be created shortly.
 
 [Cocona]:https://github.com/mayuki/Cocona
