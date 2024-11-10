@@ -2,10 +2,11 @@
 set -euo pipefail
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" &>/dev/null && pwd -P)
+ROOT_DIR=$(cd "${SCRIPT_DIR}/../" &>/dev/null && pwd -P)
 
-cd "${SCRIPT_DIR}/../"
+cd "${ROOT_DIR}"
 
-OUTPUTDIR="${RUNNER_TEMP:-temp}"
+OUTPUTDIR="${RUNNER_TEMP:-${ROOT_DIR}/temp}"
 COMMAND_NAME=gh-csharp-example
 SLN=${COMMAND_NAME}.sln
 
