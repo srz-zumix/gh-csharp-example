@@ -5,11 +5,11 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var app = CoconaApp.Create(args, options =>
+        var builder = CoconaApp.CreateBuilder(args, options =>
         {
             options.EnableShellCompletionSupport = true;
         });
-
+        var app = builder.Build();
         app.AddSubCommand("say", x =>
         {
             x.AddCommand("hello", (string name="world") => Console.WriteLine($"Hello {name}"));
