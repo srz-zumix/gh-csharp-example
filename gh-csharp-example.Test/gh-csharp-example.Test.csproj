@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\gh-csharp-example\gh-csharp-example.csproj" />
+    <ProjectReference Include="..\gh-csharp-example.Command\gh-csharp-example.Command.csproj" />
   </ItemGroup>
 
 </Project>
