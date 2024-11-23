@@ -41,4 +41,4 @@ jobs:
       - name: install
         run: make install
       - name: run
-        run: gh csharp-examples say hello
+        run: gh csharp-example say hello
