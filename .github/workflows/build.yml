@@ -4,6 +4,7 @@ on:
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  GH_TOKEN: ${{ github.token }}
   DOTNET_VERSION: "8.0.x"
 
 concurrency:
@@ -22,3 +23,22 @@ jobs:
         run: script/build.sh
       - name: list dist
         run: ls -l dist
+
+  develop-build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os}}
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: install
+        run: make install
+      - name: run
+        run: gh csharp-example say hello
