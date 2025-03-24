@@ -38,7 +38,7 @@ jobs:
       - name: Test
         run: dotnet test --no-build -v normal --logger "trx;LogFileName=result.xml"
       - name: Generate test report
-        uses: dorny/test-reporter@v1.9
+        uses: dorny/test-reporter@v2
         if: success() || failure()
         with:
           name: Test Report
